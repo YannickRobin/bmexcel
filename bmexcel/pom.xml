@@ -3,7 +3,7 @@
 
   <groupId>com.bluemartini</groupId>
   <artifactId>bmexcel</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>bmexcel</name>
@@ -18,9 +18,9 @@
   	<url>http://code.google.com/p/bmexcel/issues/list</url>
   </issueManagement>
   <scm>
-	<connection>scm:svn:https://bmexcel.googlecode.com/svn/trunk/bmexcel</connection>
-	<developerConnection>scm:svn:https://bmexcel.googlecode.com/svn/trunk/bmexcel</developerConnection>
-  	<url>http://code.google.com/p/bmexcel/source/browse/</url>
+	<connection>scm:svn:https://bmexcel.googlecode.com/svn/tags/bmexcel-1.0.0</connection>
+	<developerConnection>scm:svn:https://bmexcel.googlecode.com/svn/tags/bmexcel-1.0.0</developerConnection>
+  	<url>http://code.google.com/p/bmexcel/source/browse/tags/bmexcel-1.0.0</url>
   </scm>
   
   <dependencies>

@@ -17,7 +17,7 @@ mvn install:install-file -Dfile=<BMS_HOME>\core\classes\martini.jar -DgroupId=co
     * Ubuntu: sudo apt-get install subversion
   * Get the latest code: {{{svn checkout https://<host>/svn/trunk/<project> <project>}}}
   * {{{cd <project>}}}
-  * {{{mvn assembly:assembly}}}
+  * Test assembly Maven command: {{{mvn assembly:assembly}}}
 
 ==Eclipse setup==
   * Install Eclipse

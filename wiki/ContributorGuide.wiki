@@ -1,14 +1,25 @@
 #summary Contributor's guide
 #labels Featured
 
-= Introduction =
+==Development environment setup==
 
-Add your content here.
+==Maven 3 setup==
+  * Download and install Maven 3
+  * Add MAVEN_HOME variable
+  * Import Blue Martini core library with the following command: {{{mvn install:install-file -Dfile=<BMS_HOME>\core\classes\martini.jar -DgroupId=com.bluemartini.core -DartifactId=martini -Dversion=10.1.1.0 -Dpackaging=jar}}}
+ 
+==Get the latest code==
+  * Install SVN client
+    * Windows: Slik Subversion from http://www.sliksvn.com/en/download
+    * Ubuntu: sudo apt-get install subversion
+  * Get the latest code: {{{svn checkout https://<host>/svn/trunk/<project> <project>}}}
+  * {{{cd <project>}}}
+  * {{{mvn assembly:assembly}}}
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+==Eclipse setup==
+  * Install Eclipse
+  * Install [http://m2eclipse.sonatype.org M2Eclipse] (Eclipse update site URL: http://m2eclipse.sonatype.org/sites/m2e)
+  * {{{cd <project>}}}
+  * {{{mvn eclipse:eclipse}}} to create the Eclipse project
+  * Import the project into Eclipse: {{{File > Import... > Existing projects into Workspace}}}
+  * Generate compilation classpath: Right click on the project {{{ > Maven > Enable Dependency management}}}

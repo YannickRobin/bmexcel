@@ -156,13 +156,13 @@ Please note, in the configuration file the field can be:
 
 || *Input* || *Required* || *Default* || *Description* ||
 ||objectType||||||||
-||objectName
-||workflowTemplate
-||workflowName
-||workflowShortDesc
-||workflowDueDt
-||workflowPriority
-||startWorkflow
+||objectName||||||||
+||workflowTemplate||||||||
+||workflowName||||||||
+||workflowShortDesc||||||||
+||workflowDueDt||||||||
+||workflowPriority||||||||
+||startWorkflow||||||||
 
 ==Example==
 {{{

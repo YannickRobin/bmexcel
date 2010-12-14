@@ -45,7 +45,7 @@ Please note, in the configuration file the field can be:
 
 || *Input* || *Required* || *Default* || *Description* || 
 ||objectType||Yes||-||This field is case sensitive.<br/>Valid values:<br/>ASSORTMENT<br/>ASSORTMENT_FOLDER<br/>BUSINESS_ENTITY<br/>CART_HEADER<br/>CONTENT<br/>CONTENT_FOLDER<br/>MERCHANT<br/>MERCHANT_FOLDER<br/>ORGANIZATION<br/>ORDER<br/>PRODUCT<br/>PRODUCT_FAMILY<br/>PROMOTION<br/>QUOTE<br/>RELATIONSHIP<br/>SHIPMENT<br/>SKU<br/>SUB_ASSORTMENT<br/>USER_ACCOUNT||
-||objectName||Yes||-||Must specify an existing object.<br/>For PRODUCT_FAMILY, this is the path, starting with /Products.<br/>For ASSORTMENT, SUB_ASSORTMENT, and ASSORTMENT_FOLDER, this is the path, starting with /Assortments.<br/>For CONTENT and CONTENT_FOLDER, this is the full path, starting with /Content.<br/>For PRODUCT, this is the Product Code.<br/>For SKU, this is the SKU Code.<br/>For ORDER, this is the Order Number.<br/>For USER_ACCOUNT, this is the User ID.<br/>For USER_FOLDER, this will always be "/Customer Attributes"<br/>For SHIPMENT, this is the Source Number (assigned by the fulfillment house).<br/>For RELATIONSHIP, this is the full path through the folder to the object. For example, to override a value on a product named J100 in the /Assortments/Main/FallSale assortment, use /Assortments/Main/FallSale/J100 as the Object Name.<br/>For USER_ACCOUNT, this is the User ID.||
+||objectName||Yes||-||Must specify an existing object.<br/>For PRODUCT_FAMILY, this is the path, starting with /Products.<br/>For ASSORTMENT, SUB_ASSORTMENT, and ASSORTMENT_FOLDER, this is the path, starting with /Assortments.<br/>For CONTENT and CONTENT_FOLDER, this is the full path, starting with /Content.<br/>For PRODUCT, this is the Product Code.<br/>For SKU, this is the SKU Code.<br/>For ORDER, this is the Order Number.<br/>For USER_ACCOUNT, this is the User ID.<br/>For USER_FOLDER, this will always be "/Customer Attributes"<br/>For SHIPMENT, this is the Source Number (assigned by the fulfillment house).<br/>For RELATIONSHIP, this is the full path through the folder to the object. For example, to override a value on a product named J100 in the /Assortments/Main/!FallSale assortment, use /Assortments/Main/!FallSale/J100 as the Object Name.<br/>For USER_ACCOUNT, this is the User ID.||
 ||AttributeName||Yes||-||Must specify an existing attribute or property. For an attribute, should start by ‘ATR_’||
 ||!AttributeValue||Yes||-||The Excel cell must be formatted with the correct type for the attribute in question:<br/>Text for String, Collection, List of choice, Content and Long text attributes<br/>Number for Integer and Double attributes<br/>Date for Datetime attribute<br/>Boolean for Boolean attribute<br/><br/>For List of choice attributes, the value must be specified, not the display label.<br/>For Content, the path must be indicated.<br/>Collection is not supported||
 ||!AttributeLocale||No||-||For a multilingual attribute, this value is mandatory.||
@@ -96,6 +96,7 @@ Please note, in the configuration file the field can be:
 
 ==Definition==
 
+|| *Input* || *Required* || *Default* || *Description* ||
 ||action||Yes||-||S for insert or update<br/>D for delete||
 ||mediaUploadDir||Yes||-||The folder that contains the image.<br/>The folder must exist.||
 ||mediaUploadArchive||Yes||-||After import, the image is removed from the upload dir and backed up in the archive folder.<br/>This folder must exist.||
@@ -129,6 +130,11 @@ Please note, in the configuration file the field can be:
 {{{ExcelBMIRecordProcessor}}} reused BM Import record processor.
 
 ==Definition==
+
+|| *Input* || *Required* || *Default* || *Description* ||
+||action||Yes||-||BM Import action code.<br/>Usually (I, U, S or D), valid action codes depend on the record type.<br/>See Import File Reference document.||
+||recordType||Yes||-||BM Import record type.<br/>See Import File Reference document.||
+||field1, field2, …field<n>||No||-||BM Import fields. <br/>See Import File Reference document.||
 
 ==Example==
 {{{

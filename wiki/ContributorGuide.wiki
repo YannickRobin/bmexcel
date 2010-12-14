@@ -5,7 +5,7 @@
 
 ==Maven 3 setup==
   * Download and install Maven 3
-  * Add MAVEN_HOME variable
+  * Add MAVEN_HOME variable to your system
   * Import Blue Martini core library with the following command:
 {{{
 mvn install:install-file -Dfile=<BMS_HOME>\core\classes\martini.jar -DgroupId=com.bluemartini.core -DartifactId=martini -Dversion=10.1.1.0 -Dpackaging=jar

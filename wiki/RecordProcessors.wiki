@@ -134,7 +134,7 @@ Please note, in the configuration file the field can be:
 || *Input* || *Required* || *Default* || *Description* ||
 ||action||Yes||-||BM Import action code.<br/>Usually (I, U, S or D), valid action codes depend on the record type.<br/>See Import File Reference document.||
 ||recordType||Yes||-||BM Import record type.<br/>See Import File Reference document.||
-||field1, field2, …field<n>||No||-||BM Import fields. <br/>See Import File Reference document.||
+||field1, field2, …fieldN||No||-||BM Import fields. <br/>See Import File Reference document.||
 
 ==Example==
 {{{
@@ -153,6 +153,16 @@ Please note, in the configuration file the field can be:
 {{{ExcelStartWorkflowRecordProcessor}}} is included in {{{BM Flow}}} module.
 
 ==Definition==
+
+|| *Input* || *Required* || *Default* || *Description* ||
+||objectType||||||||
+||objectName
+||workflowTemplate
+||workflowName
+||workflowShortDesc
+||workflowDueDt
+||workflowPriority
+||startWorkflow
 
 ==Example==
 {{{

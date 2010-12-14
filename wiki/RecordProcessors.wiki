@@ -11,7 +11,7 @@ Please note, in the configuration file the field can be:
 
 =!ExcelProductRecordProcessor=
 
-!ExcelProductRecordProcessor inserts a new product or updates an existing product.
+{{{!ExcelProductRecordProcessor}}} inserts a new product or updates an existing product.
 
 ==Definition==
 
@@ -38,7 +38,99 @@ Please note, in the configuration file the field can be:
 }}}
 
 =!ExcelObjectAttributeRecordProcessor=
+
+{{{!ExcelObjectAttributeRecordProcessor}}} edits the attribute value for a specific object in the database.
+
+==Definition==
+
+==Example==
+{{{
+"class" String "com.bluemartini.loader.excel.record.ExcelObjectAttributeRecordProcessor",
+"input" DNA {
+	"objectType" String "PRODUCT",
+	"objectName" String "%Product Name",
+	"attributeName" String "ATR_Description",
+	"attributeValue" String "%Description",
+	"attributeLocale" String "en"
+}
+}}}
+
+
 =!ExcelObjectPriceRecordProcessor=
+
+{{{!ExcelObjectPriceRecordProcessor}}} edits price data for a specific object in the database.
+
+==Definition==
+
+==Example==
+{{{
+"class" String "com.bluemartini.loader.excel.record.ExcelObjectPriceRecordProcessor",
+"input" DNA {
+	"objectType" String "PRODUCT",
+	"objectName" String "%Product Name",
+	" priceListFolder" String "USA_Standard",
+	"amount" String "%USA Standard price"
+}
+}}}
+
 =!ExcelMediaUploadRecordProcessor=
-=!ExcelBMIRecordProcessor=
+
+{{{!ExcelMediaUploadRecordProcessor}}} imports the image indicated in the database and associates this content to a specific object (or multiple objects) in the database using the attribute indicated. Before importing, images must be available on the server. It will be usually a folder available by ftp to the business users.
+
+==Definition==
+
+==Example==
+{{{
+"class" String "com.bluemartini.loader.excel.record.ExcelMediaUploadRecordProcessor",
+"input" DNA {
+      "action" String "S",
+	"mediaUploadDir" String "$BMS_HOME/temp/upload",
+	"mediaUploadArchive" String "$BMS_HOME/temp/archive",					
+      "mediaName" String "%Image name",	
+	"contentPath" String "/Content/media/images/products",
+	"contentName" String "%Content name",
+      "objectName" String "%Product Name",
+	"objectType" String "PRODUCT",
+	"attributeName" String "ATR_Image_Title",
+	"attributeLocale" String "en"    			
+}
+}}}
+
+=ExcelBMIRecordProcessor=
+
+{{{ExcelBMIRecordProcessor}}} reused BM Import record processor.
+
+==Definition==
+
+==Example==
+{{{
+"class" String "com.bluemartini.loader.excel.record.ExcelBMIRecordProcessor",
+"input" DNA {
+	"action" String "%Action",
+	"recordType" String "PRODUCT",
+	"field1" String "%Product code",
+	"field2" String "%Status code",
+	"field3" String "%product family"
+}
+}}}
+
 =!ExcelStartWorkflowRecordProcessor=
+
+{{{ExcelStartWorkflowRecordProcessor}}} is included in {{{BM Flow}}} module.
+
+==Definition==
+
+==Example==
+{{{
+"class" String "com.bluemartini.loader.excel.record.ExcelStartWorkflowRecordProcessor",
+"input" DNA {
+	"objectType" String "PRODUCT",
+	"objectName" String "%Product Name",
+	"workflowTemplate" String "product_enrichment",
+	"workflowName" String "%Workflow project name",
+	"workflowShortDesc" String "This is a product enrichment workflow demo",
+	"workflowDueDt" String "%Workflow due date",
+	"workflowPriority" Integer "3",				
+	"startWorkflow" String "%Start workflow"
+}
+}}}

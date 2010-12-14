@@ -77,6 +77,7 @@ Please note, in the configuration file the field can be:
 ||priceListFolder||Yes||-||Must specify the name of an existing price list folder. Lookup is not case sensitive.||
 ||asOfDate||No||Currently effective price list.||Price is applied to the price list effective on the date supplied.||
 ||amount||Yes||-||Price amount, denominated in the currency of the specified price list folder.||
+||removeValueChain||No||*||If amount is equals to removeValueChain, the object price is removed||
 
 ==Example==
 {{{
@@ -94,6 +95,17 @@ Please note, in the configuration file the field can be:
 {{{ExcelMediaUploadRecordProcessor}}} imports the image indicated in the database and associates this content to a specific object (or multiple objects) in the database using the attribute indicated. Before importing, images must be available on the server. It will be usually a folder available by ftp to the business users.
 
 ==Definition==
+
+||action||Yes||-||S for insert or update<br/>D for delete||
+||mediaUploadDir||Yes||-||The folder that contains the image.<br/>The folder must exist.||
+||mediaUploadArchive||Yes||-||After import, the image is removed from the upload dir and backed up in the archive folder.<br/>This folder must exist.||
+||mediaName||Yes||-||The image name on the disk||
+||contentPath||Yes||-||The content folder where the image is imported.<br/>It must start with ‘/Content’.<br/>The content folder must exist.|| 
+||contentName||Yes||-||The content name where the image is imported.<br/>If the content already exists, a new revision is created.||
+||objectName||Yes||-||Must specify an existing object.<br/>Object Name supports multiple value separated by ‘,’.<br/>For PRODUCT_FAMILY, this is the path, starting with /Products.<br/>For ASSORTMENT, SUB_ASSORTMENT, and ASSORTMENT_FOLDER, this is the path, starting with /Assortments.<br/>For CONTENT and CONTENT_FOLDER, this is the full path, starting with /Content.<br/>For PRODUCT, this is the Product Code.<br/>For SKU, this is the SKU Code.<br/>For RELATIONSHIP, this is the full path through the folder to the object. For example, to override a value on a product named J100 in the /Assortments/Main/FallSale assortment, use /Assortments/Main/FallSale/J100 as the Object Name.||
+||objectType||Yes||-||"PRODUCT", //for object attribute||
+||attributeName||Yes||-||Must a content item attribute||
+||attributeLocale||No||-||For a multilingual content attribute, this value is mandatory.||
 
 ==Example==
 {{{

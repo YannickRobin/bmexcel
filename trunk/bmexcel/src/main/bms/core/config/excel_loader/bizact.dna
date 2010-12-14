@@ -1,0 +1,9 @@
+DNA {
+    "RemoteDesktopUploadExcel" DNA {
+        "class" String "com.bluemartini.remotedesktop.htmlapp.RemoteDesktopExcelUpload",
+        "description" String "Upload Excel file",
+        "implements" String "HTMLRequest",
+        "section" String "RemoteDesktop",
+        "autoTransaction" Boolean "False"
+    }
+}

@@ -9,6 +9,8 @@ Please note, in the configuration file the field can be:
   * A static value: indicate a fixed value. i.e. {{{PRODUCT}}}
   * An Excel value: indicate an Excel column name (preceded by {{{%}}}). i.e.  {{{%Product code}}}
 
+=Processor list==
+
   * [RecordProcessors#ExcelProductRecordProcessor ExcelProductRecordProcessor]
   * [RecordProcessors#ExcelObjectAttributeRecordProcessor ExcelObjectAttributeRecordProcessor]
   * [RecordProcessors#ExcelObjectPriceRecordProcessor ExcelObjectPriceRecordProcessor]

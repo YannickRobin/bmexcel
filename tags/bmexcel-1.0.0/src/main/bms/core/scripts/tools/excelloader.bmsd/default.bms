@@ -1,0 +1,1 @@
+${JAVA} -Xms128m -Xmx256m com.bluemartini.loader.excel.BMExcelLoader -c ${APPCONFIG} "$[@]"

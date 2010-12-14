@@ -1,0 +1,138 @@
+DNA {
+	"import_lock" Boolean "false",
+	"batch_size" Integer "50",
+	"max_lines" Integer "-1",
+	"max_failed_lines" Integer "100",
+	"file_types" DNA {
+	    "BPA_UPLOAD_DEMO" DNA {
+	    	"description" String "Blue Planet upload demo",
+		    "process" DNAArray [
+				{
+					"class" String "com.bluemartini.loader.excel.record.ExcelProductRecordProcessor",
+					"input" DNA {
+						"productCode" String "%Product Name",
+						"family" String "%Product Family",
+						"status_cd" String "A",
+						"shortDesc" String "%Description short",
+						"approved" Boolean "true"
+					}
+				},
+				{
+		    		"class" String "com.bluemartini.loader.excel.record.ExcelObjectAttributeRecordProcessor",
+		    		"input" DNA {
+		    		    "objectType" String "PRODUCT",
+		    			"objectName" String "%Product Name",
+		    			"attributeName" String "ATR_Description",
+		    			"attributeValue" String "%Description",
+						"attributeLocale" String "en"
+		    		}
+		    	},
+				{
+		    		"class" String "com.bluemartini.loader.excel.record.ExcelObjectAttributeRecordProcessor",
+		    		"input" DNA {
+		    		    "objectType" String "PRODUCT",
+		    			"objectName" String "%Product Name",
+		    			"attributeName" String "ATR_Description_Short",
+		    			"attributeValue" String "%Description short",
+						"attributeLocale" String "en"
+		    		}
+		    	},
+				{
+		    		"class" String "com.bluemartini.loader.excel.record.ExcelObjectAttributeRecordProcessor",
+		    		"input" DNA {
+		    		    "objectType" String "PRODUCT",
+		    			"objectName" String "%Product Name",
+		    			"attributeName" String "ATR_Description_Long",
+		    			"attributeValue" String "%Description long",
+						"attributeLocale" String "en"
+		    		}
+		    	},
+				{
+		    		"class" String "com.bluemartini.loader.excel.record.ExcelObjectAttributeRecordProcessor",
+		    		"input" DNA {
+		    		    "objectType" String "PRODUCT",
+		    			"objectName" String "%Product Name",
+		    			"attributeName" String "ATR_Flag_Is_WaterProof",
+		    			"attributeValue" String "%Water proof"
+		    		}
+		    	},
+				{
+					"class" String "com.bluemartini.loader.excel.record.ExcelObjectPriceRecordProcessor",
+					"input" DNA {
+						"objectType" String "PRODUCT",
+						"objectName" String "%Product Name",
+						"priceListFolder" String "USA_Standard",
+						"amount" String "%USA Standard price"
+					}
+				}
+		    ]
+		},
+	    "BPA_UPLOAD_IMAGE_DEMO" DNA {
+	    	"description" String "Blue Planet image upload demo",
+		    "process" DNAArray [
+		    	{
+		    		"class" String "com.bluemartini.loader.excel.record.ExcelMediaUploadRecordProcessor",
+					"input" DNA {
+		    			"mediaUploadDir" String "$BMS_HOME/temp/upload",
+		    			"mediaUploadArchive" String "$BMS_HOME/temp/archive",					
+		    			"action" String "S",
+		    			"objectName" String "%Product Name",
+		    			"mediaName" String "%Image name", //
+		    		    "contentPath" String "/Content/media/images/products",
+		    		    "contentName" String "%Content name",
+		    		    "objectType" String "PRODUCT", //for object attribute
+		    			"attributeName" String "ATR_Image_Title", //for object attribute
+						"attributeLocale" String "en"    			
+		    		}
+				}
+			]
+		},
+	    "BMI_UPLOAD" DNA {
+	    	"description" String "BMI Upload",
+		    "process" DNAArray [
+		    	{
+		    		"class" String "com.bluemartini.loader.excel.record.ExcelBMIRecordProcessor",
+		    		"input" DNA {
+		    		    "action" String "%Action",
+		    			"recordType" String "%Record Type",
+		    			"field1" String "%field1",
+						"field2" String "%field2",
+						"field3" String "%field3",
+						"field4" String "%field4",
+						"field5" String "%field5",
+						"field6" String "%field6",
+						"field7" String "%field7",
+						"field8" String "%field8",
+						"field9" String "%field9",
+						"field10" String "%field10",
+						"field11" String "%field11",
+						"field12" String "%field12",
+						"field13" String "%field13",
+						"field14" String "%field14",
+						"field15" String "%field15",
+						"field16" String "%field16",
+						"field17" String "%field17",
+						"field18" String "%field18",
+						"field19" String "%field19",
+						"field20" String "%field20",
+						"field21" String "%field21",
+						"field22" String "%field22",
+						"field23" String "%field23",
+						"field24" String "%field24",
+						"field25" String "%field25",
+						"field26" String "%field26",
+						"field27" String "%field27",
+						"field28" String "%field28",
+						"field29" String "%field29",
+						"field30" String "%field30",
+						"field31" String "%field31",
+						"field32" String "%field32",
+						"field33" String "%field33",
+						"field34" String "%field34",
+						"field35" String "%field35"
+		    		}
+		    	}		    	
+		    ]
+		}		
+	}
+}

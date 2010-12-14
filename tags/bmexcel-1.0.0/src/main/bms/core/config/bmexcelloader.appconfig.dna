@@ -1,0 +1,199 @@
+DNA {
+    // The threshold for the time difference between the server and the database clocks
+    "dbClockSkewThreshold" Integer "60",
+    "read_compiled_attributes" Boolean "false",
+    "modules" StringArray [
+        "core",
+        "custom"
+    ],
+    "module_paths" DNA {
+        "core" StringArray [
+            "$BMS_CONFIG_HOME/core/config/bmcommon",
+            "$BMS_CONFIG_HOME/core/config/appcommon",
+            "$BMS_CONFIG_HOME/core/config/b2b",
+            "$BMS_CONFIG_HOME/core/config/pdc",
+            "$BMS_CONFIG_HOME/core/config/catalog",
+            "$BMS_CONFIG_HOME/core/config/thirdparty",
+            "$BMS_CONFIG_HOME/core/config/i18n",
+            "$BMS_CONFIG_HOME/core/config/help",
+            "$BMS_CONFIG_HOME/core/config/custom",
+            "$BMS_CONFIG_HOME/core/config/archive",
+            "$BMS_CONFIG_HOME/core/config/remotedesktop",			
+            "$BMS_CONFIG_HOME/core/config/excel_loader"			
+        ]
+     },
+    "imagepath" String "$BMS_IMAGES",
+    "kill_server_on_outofmemory" Boolean "true",
+    "components" DNA {
+        "dataSourceFactory" String "$BMS_DATASOURCE_FACTORY",
+        "jmsProvider" String "$BMS_JMS_PROVIDER"
+    },
+    "authentication" DNA {
+        "verifyRequiredRolesForUser" Boolean "false",
+        "userRoles" StringArray [
+            "CommandLine",
+            "ImportFiles"
+        ]
+    },
+    // * Callbacks made by the system at specific execution points *
+    "callback" DNA {
+        "startup" StringArray [
+            "com.bluemartini.dbinit.SetupSchema",
+            "com.bluemartini.util.AttributeCompilerUtil",
+            "com.bluemartini.util.AttributeUtil",
+            "com.bluemartini.server.StatusCodesStartup",
+            "com.bluemartini.html.HTMLObjectFactory",
+            "com.bluemartini.i18n.CurrencyUtil",
+            // "com.bluemartini.html.HTMLStartup",
+            "com.bluemartini.util.PaymentUtil",
+            "com.bluemartini.server.ContentStartup",
+            "com.bluemartini.thirdparty.rules.RulesStartup",
+            "com.bluemartini.server.RulesManagerStartup",
+            // "com.bluemartini.search.SearchStartup",
+            "com.bluemartini.security.BMAccessControl"
+            // "com.bluemartini.server.StatusCodesStartup",
+            // "com.bluemartini.html.HTMLObjectFactory",
+            // "com.bluemartini.jms.JMSClientStartup"
+        ],
+        "exception" StringArray [
+            "com.bluemartini.dna.BMLogExceptionHandler"
+        ],
+        "set_current_version" StringArray [
+            "com.bluemartini.app.SetCurrentVersion"
+        ]
+    },
+    // * JMS configuration parameters *
+    "jms" DNA {
+        "enabled" Boolean "false",
+        "topicConnectionFactory" DNA {
+            "queueManager" String "$BMS_JMS_MQ_QM"
+        },
+        "queueConnectionFactory" DNA {
+            "queueManager" String "$BMS_JMS_MQ_QM"
+        },
+        "server" String "$BMS_JMS_SERVER_NAME",
+        "standaloneClientEnabled" Boolean "true",
+        "reconnect_sleep_secs" Integer "5",
+        "topics" DNA {
+            "com.bluemartini.DBUtilTopic" DNA {
+                "listeners" Integer "0",
+                "publishers" Integer "5",
+                "acknowledgement_mode" String "DUPS_OK_ACKNOWLEDGE"
+            }
+        }
+    },
+    "database" DNA {
+        "main" DNA {
+            "aliases" StringArray [
+                "object",
+                "attribute",
+                "locale"
+            ],
+            // * Connection pool *
+            "pool" DNA {
+                "enabled" Boolean "true",
+                "driver" String "$POOL_DB_DRIVER",
+                "initialCapacity" String "1",
+                "maxCapacity" String "5",
+                "capacityIncrement" String "1",
+                "allowShrinking" String "true",
+                "testTableName" String "TWIST",
+                "refreshPeriod" String "5",
+                "shrinkPeriodMins" String "15"
+            }
+        },
+        "eac" DNA {
+            "pool" DNA {
+                "initialCapacity" String "1",
+                "maxCapacity" String "5"
+            }
+        },
+        "store" DNA {
+            // * Connection pool *
+            "pool" DNA {
+                "enabled" Boolean "true",
+                "driver" String "$POOL_DB_DRIVER",
+                "initialCapacity" String "1",
+                "maxCapacity" String "5",
+                "capacityIncrement" String "1",
+                "allowShrinking" String "true",
+                "testTableName" String "TWIST",
+                "refreshPeriod" String "5",
+                "shrinkPeriodMins" String "5"
+            }
+        }
+    },
+    "email" DNA {
+        "enable" Boolean "false",
+        "smtpHost" String "puresmtp.bluemartini.com",
+        "fromAddress" String "blueplanet@bluemartini.com"
+    },
+    "log" DNA {
+        "enabled" Boolean "true",
+        "name" String "excel_loader",
+        "components" DNA {
+            "exceptions" Integer "2",
+            "jms" Integer "0",
+            "mail" Integer "0",
+            "heap" Integer "0",
+            "staging" Integer "0",
+            "bizact" Integer "0",
+            "dbsql" Integer "2",
+            "dbperf" Integer "0",
+            "tableview" Integer "0",
+            "search" Integer "0",
+            "server" Integer "0",
+            "catalogpublish" Integer "0",
+            "system" Integer "4"			
+        }
+    },
+    "bizact" DNA {
+        "strict" Boolean "false",
+        "client" DNA {
+            "eac" DNA {
+                "protocol" String "rmi",
+                "host" String "$BMS_EAC_SERVER",
+                "port" Integer "$BMS_EAC_PORT",
+                "checkAtStartup" boolean "true"
+             }
+        }
+    },
+    "server_list" DNA {
+        "eac" DNA {
+            "url" String "eac",
+            "bizacts" StringArray [
+                "EACGetEnvironments",
+                "EACGetObjectDetail",
+                "EACGetRolesForUser" ,
+                "EACGetUserAccountDetail",
+                "EACLogin",
+                "EACRefreshEnvironmentList",
+                "GetFormattedUserNames",
+				"RetrieveEncryptionKey"
+            ]
+        }
+    },
+    // required for Business Entities
+    "app" DNA {
+        "default_contract_price_list_folder" String "Default_US_Dollars",
+        "default_contract_assortment" String "Default_Contract",
+        "auto_create_business_entity_default_contract" Boolean "true",
+        "default_contract_duration_days" Integer "90",
+        "default_quote_folder_type_cd" String "A" // must match domains_en.dna
+    },
+    // If enabled checks every OBJECT_ATTRIBUTE input record - note this might slow down dataload process
+    // If there is no value in database for the default domain throws an exception and interrupts dataloading
+    "checkForDefaultDomainValue" Boolean "true",
+    // If the "db2cmd" call fails, the code checks the system table (syscat.tables) for table state
+    // of the import table (IMPORT_RECORD).  If in LOAD PENDING state, it issues LOAD TERMINATE ...
+    // If in CHECK PENDING state, it issues SET INTEGRITY ... (it is done in that order)
+    // The definitions for CHECK PENDING and LOAD PENDING strings returned from syscat.tables can be
+    // changed below. (Note: normal state is not currently used in the code)
+    "DB2PendingConditions" DNA {
+        "checkPending" String "C",
+        "loadPending" String "L",
+        "normal" String "N"
+    },
+    
+    "appconfig" String ""
+}

@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.bluemartini</groupId>
+  <artifactId>bmexcel</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>bmexcel</name>
+  <url>http://code.google.com/p/bmexcel/</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <issueManagement>
+  	<system>Google Code</system>
+  	<url>http://code.google.com/p/bmexcel/issues/list</url>
+  </issueManagement>
+  <scm>
+	<connection>scm:svn:https://bmexcel.googlecode.com/svn/tags/bmexcel-1.0.0</connection>
+	<developerConnection>scm:svn:https://bmexcel.googlecode.com/svn/tags/bmexcel-1.0.0</developerConnection>
+  	<url>http://code.google.com/p/bmexcel/source/browse/tags/bmexcel-1.0.0</url>
+  </scm>
+  
+  <dependencies>
+	  <dependency>
+	  	<groupId>com.bluemartini.core</groupId>
+	  	<artifactId>martini</artifactId>
+	  	<version>10.1.1.0</version>
+	  	<type>jar</type>
+	  </dependency>
+	  <dependency>
+		<groupId>net.sourceforge.jexcelapi</groupId>
+	  	<artifactId>jxl</artifactId>
+	  	<version>2.6.10</version>
+	  </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptor>src/main/assembly/bin.xml</descriptor>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <!--
+          During release:perform, enable the "release" profile
+          -->
+          <goals>deploy assembly:assembly</goals>
+        </configuration>
+      </plugin>
+    </plugins>    
+  </build>
+  
+  <distributionManagement>
+	<repository>
+		<id>Local Maven Repository</id>
+		<name>My local Maven Repository</name>
+		<url>file:///C:/localMavenRepository</url>
+	</repository>
+  </distributionManagement>
+  
+</project>

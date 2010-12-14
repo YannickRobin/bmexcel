@@ -20,8 +20,7 @@ Please note, in the configuration file the field can be:
 ||family||No||-||The product family must be identified by a full slash-delimited path, starting with /Products.
 It is required for product creation.
 For existing product, if the product family is indicated, the product is moved.||
-||status_cd||No||I||Valid values are defined by the productStatusCode domain:A—Active;I—Inactive.<br/>
-NOTE: Inactive products are not available for sale on the website.||
+||status_cd||No||I||Valid values are defined by the productStatusCode domain:A—Active;I—Inactive.<br/>NOTE: Inactive products are not available for sale on the website.||
 ||shortDesc||No||-||Short description for the product. It is highly recommended that short descriptions be provided for all products.||
 ||backorderable||No||-||Back orderable flag.||
 ||skuReserveQuantity||No||-||Reserve quantity.||

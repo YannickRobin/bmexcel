@@ -1,7 +1,7 @@
 #summary Contributor's guide
 #labels Featured
 
-==Development environment setup==
+=Development environment setup=
 
 ==Maven 3 setup==
   * Download and install Maven 3

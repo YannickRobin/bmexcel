@@ -71,6 +71,13 @@ Please note, in the configuration file the field can be:
 
 ==Definition==
 
+|| *Input* || *Required* || *Default* || *Description* ||
+||objectType||Yes||-||This field is case sensitive.<br/>Valid values:<br/>PRODUCT<br>SKU||
+||objectName||Yes||-||Must specify an existing object.<br/>For PRODUCT, this is the Product Code.<br/>For SKU, this is the SKU Code.||
+||priceListFolder||Yes||-||Must specify the name of an existing price list folder. Lookup is not case sensitive.||
+||asOfDate||No||Currently effective price list.||Price is applied to the price list effective on the date supplied.||
+||amount||Yes||-||Price amount, denominated in the currency of the specified price list folder.||
+
 ==Example==
 {{{
 "class" String "com.bluemartini.loader.excel.record.ExcelObjectPriceRecordProcessor",

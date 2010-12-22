@@ -1,0 +1,27 @@
+DNA {
+  "fileType" DNA {
+    "description" String "Dynamic list to select a excel file type",
+    "dnaType" String "string",
+    "dynamicTable" Boolean "true",
+    "notselected" DNA {
+      "decode" String "File type"
+    }
+  },
+  "fileType2" DNA {
+    "description" String "Dynamic list to select a excel file type",
+    "dnaType" String "string",
+    "notselected" DNA {
+      "decode" String "File type"
+    },
+	"values" DNAArray [
+		{
+			"code" String "ContentApproval",
+			"decode" String "Content Approval"
+		},
+		{
+			"code" String "SiteApproval",
+			"decode" String "Site Approval"
+		}
+	]	
+  }  
+}

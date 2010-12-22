@@ -1,0 +1,575 @@
+// 
+// ** Don't change this file unless you know what you are doing
+// 
+DNA {
+    "PRIVILEGE_ARRAY" BOArray [
+        (PRIVILEGE) {
+            "description" String "Ability to use the Excel Loader Manager",
+            "label" String "ExcelLoaderManagerAccess",
+            // High level managers
+            "privilegeName" String "excelLoaderManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },	
+        (PRIVILEGE) {
+            "description" String "Ability to use the Attribute Manager",
+            "label" String "AttributeManagerAccess",
+            // High level managers
+            "privilegeName" String "attributeManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Product Manager",
+            "label" String "ProductManagerAccess",
+            "privilegeName" String "productManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Assortment Manager",
+            "label" String "AssortmentManagerAccess",
+            "privilegeName" String "assortmentManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Pricing Manager",
+            "label" String "PricingManagerAccess",
+            "privilegeName" String "pricingManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Promotion Manager",
+            "label" String "PromotionManagerAccess",
+            "privilegeName" String "promotionManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Shipping Manager",
+            "label" String "ShippingManagerAccess",
+            "privilegeName" String "shippingManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the User Manager",
+            "label" String "UserManagerAccess",
+            "privilegeName" String "userManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Workflow Manager",
+            "label" String "WorkflowManagerAccess",
+            "privilegeName" String "workflowManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Data Mining Manager",
+            "label" String "DataMiningManagerAccess",
+            "privilegeName" String "dataMiningManager",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use tools that edit Webstore contents.",
+            "label" String "WebstoreSetupAccess",
+            "privilegeName" String "webstoreSetup",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Content",
+            "label" String "ContentManagerAccess",
+            "privilegeName" String "contentManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+	   (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Layout",
+            "label" String "LayoutManagerAccess",
+            "privilegeName" String "layoutManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Layout Folders",
+            "label" String "LayoutFolderAccess",
+            // Content
+            "privilegeName" String "layoutFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Layout",
+            "label" String "LayoutAccess",
+            "privilegeName" String "layout",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Rules",
+            "label" String "RuleManagerAccess",
+            "privilegeName" String "ruleManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Object Permissions",
+            "label" String "PermissionsAccess",
+            // Users, groups, roles
+            "privilegeName" String "permissions",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Users",
+            "label" String "UserAccess",
+            // Users, groups, roles
+            "privilegeName" String "user",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Groups",
+            "label" String "GroupAccess",
+            "privilegeName" String "group",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Roles",
+            "label" String "RoleAccess",
+            "privilegeName" String "role",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Product Families",
+            "label" String "ProductFamilyAccess",
+            // Products
+            "privilegeName" String "productFamily",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Products",
+            "label" String "ProductAccess",
+            "privilegeName" String "product",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Assortments",
+            "label" String "AssortmentAccess",
+            "privilegeName" String "assortment",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Assortment Folders",
+            "label" String "AssortmentFolderAccess",
+            "privilegeName" String "assortmentFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Attributes",
+            "label" String "AttributeAccess",
+            "privilegeName" String "attribute",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to create, edit and delete Price Lists Folders",
+            "label" String "PriceListFolderAccess",
+            // Pricing
+            "privilegeName" String "priceListFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Price Lists",
+            "label" String "PriceListAccess",
+            "privilegeName" String "priceList",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view and edit prices for products/skus",
+            "label" String "PricingAccess",
+            "privilegeName" String "pricing",
+            "privilegeOptionDomain" String "privilegeNVEAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to create, edit and delete Promotion Folders",
+            "label" String "PromotionFolderAccess",
+            // Promotion
+            "privilegeName" String "promotionFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Promotions",
+            "label" String "PromotionAccess",
+            "privilegeName" String "promotion",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to edit Promotion prices",
+            "label" String "PromotionPricingAccess",
+            "privilegeName" String "promotionPricing",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete shipping options",
+            "label" String "ShippingCarriersAccess",
+            // Webstore Setup
+            "privilegeName" String "shippingCarriers",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Shipment Folders",
+            "label" String "ShipmentFolderAccess",
+            "privilegeName" String "shipmentFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Controls Access to Operational Attributes",
+            "label" String "OperationalAttributes",
+            // Attributes
+            "privilegeName" String "OPR",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "ATR"
+        },
+        (PRIVILEGE) {
+            "description" String "Controls Access to Descriptive Attributes",
+            "label" String "DescriptiveAttributes",
+            "privilegeName" String "DSC",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "ATR"
+        },
+        (PRIVILEGE) {
+		    "description" String "Controls Access to Maintenance Attributes",
+		    "label" String "MaintenanceAttributes",
+		    "privilegeName" String "MAN",
+		    "privilegeOptionDomain" String "privilegeNVEDAccess",
+		    "privilegeType" String "ATR"
+        },
+        (PRIVILEGE) {
+	    "description" String "Controls Access to Maintenance Attributes",
+	    "label" String "MaintenanceAttributes",
+	    "privilegeName" String "MAN",
+	    "privilegeOptionDomain" String "privilegeNVEDAccess",
+	    "privilegeType" String "ATR"
+        },
+        (PRIVILEGE) {
+            "description" String "Controls Access to Remote Desktop Operational Attributes",
+            "label" String "RemoteDesktopOperationalAttributes",
+            "privilegeName" String "RDOPR",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Controls Access to RemoteDesktop Descriptive Attributes",
+            "label" String "RemoteDesktopDescriptiveAttributes",
+            "privilegeName" String "RDDSC",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+		    "description" String "Controls Access to RemoteDesktop Maintenance Attributes",
+		    "label" String "RemoteDesktopMaintenanceAttributes",
+		    "privilegeName" String "RDMAN",
+		    "privilegeOptionDomain" String "privilegeNVEDAccess",
+		    "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Controls Decision Support System utilities",
+            "label" String "DecisionSupportSystemAdministration",
+            // Data Mining
+            "privilegeName" String "dssadmin",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to ship from Decision Support System to store",
+            "label" String "DecisionSupportSystemToStore",
+            "privilegeName" String "dsstostore",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Customer's Payments",
+            "label" String "PaymentAccess",
+            "privilegeName" String "payments",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Content Folders",
+            "label" String "ContentFolderAccess",
+            // Content
+            "privilegeName" String "contentFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Content",
+            "label" String "ContentAccess",
+            "privilegeName" String "content",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Rule Base Folders",
+            "label" String "RuleBaseFolderAccess",
+            // Rules
+            "privilegeName" String "ruleBaseFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Rule Bases",
+            "label" String "RuleBaseAccess",
+            "privilegeName" String "ruleBase",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Workflow Templates",
+            "label" String "WorkFlowTemplateAccess",
+            // Workflow
+            "privilegeName" String "workTemplate",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to access the merchant manager in a multi-merchant system.",
+            "label" String "MerchantManager",
+            // Multi-Merchant
+            "privilegeName" String "merchantManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to manage merchant folders in a multi-merchant system.",
+            "label" String "MerchantFolderAccess",
+            "privilegeName" String "merchantFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to manage merchants in a multi-merchant system.",
+            "label" String "MerchantAccess",
+            "privilegeName" String "merchant",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to administer the Catalog Publisher",
+            "label" String "CatalogPublisher",
+            // Catalog Publisher
+            "privilegeName" String "catalogPublisher",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to log into Remote Administration",
+            "label" String "RemoteAdministration",
+            "privilegeName" String "remoteAdmin",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view or edit webstore configuration through Remote Administration",
+            "label" String "RemoteConfig",
+            "privilegeName" String "remoteConfig",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to monitor webstore activity through Remote Administration",
+            "label" String "RemoteMonitor",
+            "privilegeName" String "remoteMonitor",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view exception reports and diagnostics through Remote Administration",
+            "label" String "RemoteDiagnostics",
+            "privilegeName" String "remoteDiagnostics",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to login into RemoteDesktop",
+            "label" String "RemoteDesktopAccess",
+            // Remote Desktop
+            "privilegeName" String "remoteDesktop",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to login into EnterpriseDesktop",
+            "label" String "EnterpriseDesktopAccess",
+            // Enterprise Desktop
+            "privilegeName" String "enterpriseDesktop",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Table View Manager",
+            "label" String "TableViewManagerAccess",
+            "privilegeName" String "tableViewManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Shipment Processor",
+            "label" String "ShipmentProcessorAccess",
+            "privilegeName" String "shipmentProcessor",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Authoring Template Manager",
+            "label" String "AuthTemplateManagerAccess",
+            "privilegeName" String "webAuthTemplateManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Authoring Templates",
+            "label" String "AuthTemplateAccess",
+            "privilegeName" String "webAuthTemplate",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Authoring Template Folders",
+            "label" String "AuthTemplateFolderAccess",
+            "privilegeName" String "webAuthFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Set Definition Folders",
+            "label" String "SetDefinitionFolderAccess",
+            "privilegeName" String "setDefinitionFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Set Definitions",
+            "label" String "SetDefinitionAccess",
+            "privilegeName" String "setDefinition",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to manage environments",
+            "label" String "EnvironmentManager",
+            "privilegeName" String "environmentManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to build search index.",
+            "label" String "BuildSearchIndexAccess",
+            "privilegeName" String "buildSearchIndexAccess",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Publishing Assistant",
+            "label" String "PublishingAssistantAccess",
+            "privilegeName" String "publishingAssistant",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to manage publishing job and logs.",
+            "label" String "PublishingAdministrator",
+            "privilegeName" String "publishingAdministrator",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to use the Publishing Manager",
+            "label" String "PublishingManagerAccess",
+            "privilegeName" String "publishingManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to publish into this environment",
+            "label" String "PublishAccess",
+            "privilegeName" String "publishAccess",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        // Business Entity (and Contract) related privileges
+        (PRIVILEGE) {
+            "description" String "Ability to use the Account Manager",
+            "label" String "AccountManagerAccess",
+            "privilegeName" String "businessEntityManager",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Accounts",
+            "label" String "AccountAccess",
+            "privilegeName" String "businessEntity",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Contracts",
+            "label" String "ContractAccess",
+            "privilegeName" String "contract",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        (PRIVILEGE) {
+            "description" String "Ability to view, edit and delete Contract Folders",
+            "label" String "ContractFolderAccess",
+            "privilegeName" String "contractFolder",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        },
+        // B2B host admin access
+        (PRIVILEGE) {
+            "description" String "Super user privilege",
+            "label" String "HostAdmin",
+            "privilegeName" String "B2BHostAdmin",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        // CTG admin access
+        (PRIVILEGE) {
+            "description" String "CTG user privilege",
+            "label" String "CTGAdmin",
+            "privilegeName" String "CTGAdmin",
+            "privilegeOptionDomain" String "privilegeNVAccess",
+            "privilegeType" String "SYS"
+        },
+        // Encryption key maintenance
+        (PRIVILEGE) {
+            "description" String "Ability to create, amend, delete, approve and migrate encryption keys",
+            "label" String "EncryptionKeyMaintainer",
+            "privilegeName" String "EncryptionKeyMaintainer",
+            "privilegeOptionDomain" String "privilegeNVEDAccess",
+            "privilegeType" String "SYS"
+        }
+    ]
+}

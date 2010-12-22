@@ -1,0 +1,9 @@
+DNA {
+    "upload_excel_file_wait" DNA {
+        "process" String "RemoteDesktopUploadExcel",
+        "template" String "main/excel_loader_result.jsp"
+    },
+    "upload_excel_management" DNA {
+        "process" String "RemoteDesktopExcelManagement"
+    }
+}

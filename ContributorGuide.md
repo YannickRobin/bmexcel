@@ -1,0 +1,25 @@
+# Development environment setup #
+
+## Maven 3 setup ##
+  * Download and install Maven 3
+  * Add MAVEN\_HOME variable to your system
+  * Import Blue Martini core library with the following command:
+```
+mvn install:install-file -Dfile=<BMS_HOME>\core\classes\martini.jar -DgroupId=com.bluemartini.core -DartifactId=martini -Dversion=10.1.1.0 -Dpackaging=jar
+```
+
+## Get the latest code ##
+  * Install SVN client
+    * Windows: Slik Subversion from http://www.sliksvn.com/en/download
+    * Ubuntu: sudo apt-get install subversion
+  * Get the latest code: `svn checkout https://bmexcel.googlecode.com/svn/trunk/bmexcel bmexcel`
+  * `cd bmexcel`
+  * Test assembly Maven command: `mvn assembly:assembly`
+
+## Eclipse setup ##
+  * Install Eclipse
+  * Install [M2Eclipse](http://m2eclipse.sonatype.org) (Eclipse update site URL: http://m2eclipse.sonatype.org/sites/m2e)
+  * Install SubEclipse plugin (Eclipse update site URL: http://subclipse.tigris.org/update_1.6.x)
+  * From the Maven project, execute the following command to create the Eclipse project: `mvn eclipse:eclipse`
+  * Import the project into Eclipse: `File > Import... > Existing projects into Workspace`
+  * Generate compilation classpath: Right click on the project ` > Maven > Enable Dependency management`

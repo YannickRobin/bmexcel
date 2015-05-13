@@ -39,10 +39,10 @@ Here are the main features:
 ##RemoteDesktop
 Business users must have the privilege `ExcelLoaderManagerAccess` to have access to the `Excel Loader` tab inside !RemoteDesktop.
 
-!(bmexcel1)[/bmexcel/wiki/images/bmexcel1.png]<br/>
+![bmexcel1](/bmexcel/wiki/images/bmexcel1.png)
 _Figure 1-BM Excel Loader import page_
-<br/>
-!(bmexcel2)[/bmexcel/wiki/images/bmexcel2.png]<br/>
+
+![bmexcel2](/bmexcel/wiki/images/bmexcel2.png)
 _Figure 2-BM Excel Loader import result page_
 
 ##Command line
@@ -90,10 +90,10 @@ For each spreadsheet template you provide to the business users, you have to add
 
 ##Record processors
 
-  * [RecordProcessors#ExcelProductRecordProcessor ExcelProductRecordProcessor]
-  * [RecordProcessors#ExcelObjectAttributeRecordProcessor ExcelObjectAttributeRecordProcessor]
-  * [RecordProcessors#ExcelObjectPriceRecordProcessor ExcelObjectPriceRecordProcessor]
-  * [RecordProcessors#ExcelMediaUploadRecordProcessor ExcelMediaUploadRecordProcessor]
-  * [RecordProcessors#ExcelBMIRecordProcessor ExcelBMIRecordProcessor]
-  * [RecordProcessors#ExcelStartWorkflowRecordProcessor ExcelStartWorkflowRecordProcessor]
+  * [ExcelProductRecordProcessor](RecordProcessors#ExcelProductRecordProcessor)
+  * [ExcelObjectAttributeRecordProcessor](RecordProcessors#ExcelObjectAttributeRecordProcessor)
+  * [ExcelObjectPriceRecordProcessor](RecordProcessors#ExcelObjectPriceRecordProcessor)
+  * [ExcelMediaUploadRecordProcessor](RecordProcessors#ExcelMediaUploadRecordProcessor)
+  * [ExcelBMIRecordProcessor](RecordProcessors#ExcelBMIRecordProcessor)
+  * [ExcelStartWorkflowRecordProcessor](RecordProcessors#ExcelStartWorkflowRecordProcessor)
 

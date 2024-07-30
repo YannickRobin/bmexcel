@@ -141,7 +141,7 @@ See above.
 ## Parser
 The objective here is to support different file types.
 
-Parser (https://github.com/YannickRobin/bmexcel/blob/master/bmexcel/src/main/java/com/bluemartini/loader/excel/parser/Parser.java) is an interface with the following methods that needs to be implemented:
+[Parser](bmexcel/src/main/java/com/bluemartini/loader/excel/parser/Parser.java) is an interface with the following methods that needs to be implemented:
 - getLines()
 - getRowsSize()
 - close()

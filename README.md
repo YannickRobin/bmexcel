@@ -90,12 +90,13 @@ For each spreadsheet template you provide to the business users, you have to add
 
 ## Record processors
 
-  * [ExcelProductRecordProcessor](RecordProcessors#ExcelProductRecordProcessor)
-  * [ExcelObjectAttributeRecordProcessor](RecordProcessors#ExcelObjectAttributeRecordProcessor)
-  * [ExcelObjectPriceRecordProcessor](RecordProcessors#ExcelObjectPriceRecordProcessor)
-  * [ExcelMediaUploadRecordProcessor](RecordProcessors#ExcelMediaUploadRecordProcessor)
-  * [ExcelBMIRecordProcessor](RecordProcessors#ExcelBMIRecordProcessor)
-  * [ExcelStartWorkflowRecordProcessor](RecordProcessors#ExcelStartWorkflowRecordProcessor)
+Here are the default record processors:
+  * [ExcelProductRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelProductRecordProcessor.java)
+  * [ExcelObjectAttributeRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelObjectAttributeRecordProcessor.java)
+  * [ExcelObjectPriceRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelObjectPriceRecordProcessor.java)
+  * [ExcelMediaUploadRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelMediaUploadRecordProcessor.java)
+  * [ExcelBMIRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelBMIRecordProcessor.java)
+  * [ExcelStartWorkflowRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelStartWorkflowRecordProcessor.java)
 
 # High Level Design
 
@@ -135,8 +136,17 @@ com.bluemartini.tools.BMExcelLoader.process()
 ## File type
 See above.
 
-## Record Processor
-See above.
+## Record Processors
+
+Here are the default record processors:
+  * [ExcelProductRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelProductRecordProcessor.java)
+  * [ExcelObjectAttributeRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelObjectAttributeRecordProcessor.java)
+  * [ExcelObjectPriceRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelObjectPriceRecordProcessor.java)
+  * [ExcelMediaUploadRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelMediaUploadRecordProcessor.java)
+  * [ExcelBMIRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelBMIRecordProcessor.java)
+  * [ExcelStartWorkflowRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelStartWorkflowRecordProcessor.java)
+
+To implement your own processor, you need to implement [ExcelProductRecordProcessor](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelRecordProcessor.java).
 
 ## Parser
 The objective here is to support different file types.

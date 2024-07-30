@@ -4,7 +4,7 @@ BM Excel is a web interface to import catalog data using complex spreadsheets (t
 The goal is to cover BM Import limitations for business users.<p/>
 
 Here are the main features:
-* Provide a web Interface (new !RemoteDesktop tab).
+* Provide a web Interface.
 * Accept and manipulate Excel spreadsheets without transformation so it supports Excel template, macro, column formatting, etc...
 * Support custom spreadsheet template: you define your spreadsheet format by configuration file.
 * Display comprehensive and user-friendly error messages.
@@ -152,4 +152,9 @@ By default BMExcel supports the following providers:
 - [XMLParser](bmexcel/src/main/java/com/bluemartini/loader/excel/parser/XMLParser.java)
 
 ## ExcelLineProcessingException
-You can specify the specific business error.
+By throwing an [ExcelLineProcessingException](bmexcel/src/main/java/com/bluemartini/loader/excel/record/ExcelLineProcessingException.java) in your processor, you can specify a comprehensive business error.
+
+Here is an example:
+```
+throw new ExcelLineProcessingException("Product code is missing");
+```

@@ -1,4 +1,4 @@
-#Purpose
+# Purpose
 
 BM Excel is a web interface to import catalog data using complex spreadsheets (template, macro, column formatting, images) with dynamic comprehensive error messages (using JExcelApi library).<br/>
 The goal is to cover BM Import limitations for business users.<p/>
@@ -11,10 +11,10 @@ Here are the main features:
 * Execute multiple processors for each spreadsheet line. With BM Import to load a product with 9 attributes, you need 10 lines, with BM Excel, you need only one line. 
 * Import images by batch and associates images to products or other BM objects.
 
-#Release notes
+# Release notes
 [bmexcel-1.0.0-bin.zip](http://code.google.com/p/bmexcel/downloads/detail?name=bmexcel-1.0.0-bin.zip): Tested with BM 10.1
 
-#Installation
+# Installation
   * Unzip `bmexcel-x.x.x-bin.zip` into your BMS home
   * Restart EAC server and Edesk server
   * With ED client, add `ExcelLoaderManagerAccess` privilege to your Rdesk user
@@ -34,9 +34,9 @@ Here are the main features:
   * Restart Rdesk
   * Login to Rdesk with your Rdesk user and check there is `Excel Loader` tab
 
-#Usage
+# Usage
 
-##RemoteDesktop
+## RemoteDesktop
 Business users must have the privilege `ExcelLoaderManagerAccess` to have access to the `Excel Loader` tab inside !RemoteDesktop.
 
 ![bmexcel1](/bmexcel/wiki/images/bmexcel1.png)
@@ -45,7 +45,7 @@ _Figure 1-BM Excel Loader import page_
 ![bmexcel2](/bmexcel/wiki/images/bmexcel2.png)
 _Figure 2-BM Excel Loader import result page_
 
-##Command line
+## Command line
 It is not the primary usage of BM Excel but it supports import by command line with the following parameters:
 
 |Argument|Description|
@@ -62,10 +62,10 @@ bms excelloader -u susan -p martini -env BPADev -type BPA_UPLOAD_DEMO -file BPA_
 ```
 
 
-#Configuration
+# Configuration
 ```import_excel.dna``` is the configuration file of BM Excel.
 
-##General settings
+## General settings
 Here are the general settings of the import:
 
 |Excel loader settings|Required|Default|Description|
@@ -76,7 +76,7 @@ Here are the general settings of the import:
 |Batch_size|No|100|The lines are imported by batch. This setting indicates the size of the batch.|
 |import_lock|No|false|If enabled, only one import can be done simultaneously.|
 
-##File type
+## File type
 For each spreadsheet template you provide to the business users, you have to add a DNA with the following properties: 
 
 |File type settings| Required | Default | Description |
@@ -88,7 +88,7 @@ For each spreadsheet template you provide to the business users, you have to add
 |dnaUploadTime | No| No | In case, you want to limit the load to a specific time window. |
 |process | Yes | - | The process DNA list defines the list of the processor to execute for each line (see record processors section) |
 
-##Record processors
+## Record processors
 
   * [ExcelProductRecordProcessor](RecordProcessors#ExcelProductRecordProcessor)
   * [ExcelObjectAttributeRecordProcessor](RecordProcessors#ExcelObjectAttributeRecordProcessor)
@@ -97,3 +97,59 @@ For each spreadsheet template you provide to the business users, you have to add
   * [ExcelBMIRecordProcessor](RecordProcessors#ExcelBMIRecordProcessor)
   * [ExcelStartWorkflowRecordProcessor](RecordProcessors#ExcelStartWorkflowRecordProcessor)
 
+# High Level Design
+
+## Java Excel API library
+We use Java Excel API (a.k.a. JXL API) allows users to read, write, create, and modify sheets in an Excel (.xls) workbook at runtime. It doesn't support .xlsx format.
+
+## Code sequence flow
+
+```
+com.bluemartini.remotedesktop.htmlapp.RemoteDesktopExcelUpload.execute()
+#or
+com.bluemartini.tools.BMExcelLoader.process()
+  -> ExcelImportManager.<init>
+      -> ExcelImportConfig.<init>
+-> ExcelImportManager.parseFile()
+  -> ExcelParser.<init>
+  -> ExcelParser.getRowsSize()
+   
+  # for each line batch
+  -> ExcelParser.getLines()
+  -> ExcelImportManager.processLines()
+      #for each lines
+      -> ExcelLineProcessor.<init>
+          -> ExcelImportConfig.getProcess();
+      -> ExcelLineProcessor.parseLine()
+          #for each processors
+          -> ExcelRecordProcessor.<init>
+          -> ExcelRecordProcessor.setRecordValue()
+          -> ExcelRecordProcessor.setRecordConfig()
+          -> ExcelRecordProcessor.process()
+           
+  -> ExcelParser.close()
+  -> ExcelImportManager.getSuccessfulLines()
+  -> ExcelImportManager.getErrorLines()
+```
+
+## File type
+See above.
+
+## Record Processor
+See above.
+
+## Parser
+The objective here is to support different file types.
+
+Parser (https://github.com/YannickRobin/bmexcel/blob/master/bmexcel/src/main/java/com/bluemartini/loader/excel/parser/Parser.java) is an interface with the following methods that needs to be implemented:
+- getLines()
+- getRowsSize()
+- close()
+
+By default BMExcel supports the following providers:
+- [CSVParser](bmexcel/src/main/java/com/bluemartini/loader/excel/parser/CSVParser.java)
+- [ExcelParser](bmexcel/src/main/java/com/bluemartini/loader/excel/parser/ExcelParser.java)
+- [XMLParser](bmexcel/src/main/java/com/bluemartini/loader/excel/parser/XMLParser.java)
+
+## ExcelLineProcessingException
+You can specify the specific business error.

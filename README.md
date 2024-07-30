@@ -63,7 +63,7 @@ bms excelloader -u susan -p martini -env BPADev -type BPA_UPLOAD_DEMO -file BPA_
 
 
 # Configuration
-```import_excel.dna``` is the configuration file of BM Excel.
+[import_excel.dna](/bmexcel/src/main/bms/core/config/excel_loader/import_excel.dna) is the configuration file of BM Excel.
 
 ## General settings
 Here are the general settings of the import:
